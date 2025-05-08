@@ -1,0 +1,33 @@
+{
+ "doctype": "DocType",
+ "name": "Aircraft",
+ "module": "Maintenance",
+ "custom": 1,
+ "fields": [
+  {"fieldname": "ac_registration", "label": "Registration", "fieldtype": "Data", "reqd": 1},
+  {"fieldname": "ac_sn", "label": "Serial Number", "fieldtype": "Data"},  
+  {"fieldname": "ac_make", "label": "Make", "fieldtype": "Data"},
+  {"fieldname": "ac_manufacturer", "label": "Manufacturer", "fieldtype": "Data"},  
+  {"fieldname": "ac_model", "label": "Model", "fieldtype": "Data"},
+  {"fieldname": "ac_type", "label": "Type", "fieldtype": "Data"},
+  {"fieldname": "ac_configuration", "label": "Configuration", "fieldtype": "Small Text"},
+  {"fieldname": "ac_owner", "label": "Owner", "fieldtype": "Link", "options": "Customer"},  
+  {"fieldname": "ac_location", "label": "Operating Location", "fieldtype": "Data"},
+  {"fieldname": "ac_value", "label": "USD Value", "fieldtype": "Float"},
+  {"fieldname": "ac_tsn", "label": "Airframe Time Since New", "fieldtype": "Int"},
+  {"fieldname": "ac_tso", "label": "Airframe Time Since Overhaul", "fieldtype": "Int"},
+  {"fieldname": "ac_csn", "label": "Airframe Cycles Since New", "fieldtype": "Int"},
+  {"fieldname": "ac_cso", "label": "Airframe Cycles Since Overhaul", "fieldtype": "Int"},
+  {"fieldname": "ac_cycles_remaining", "label": "Airframe Cycles Remaining", "fieldtype": "Int"},
+  {"fieldname": "ac_engine", "label": "Engine", "fieldtype": "Link", "options": "Engine"},
+  {"fieldname": "ac_maintenance_status", "label": "Maintenance Status", "fieldtype": "Select", "options": "Scheduled\nCompleted\nOverdue"},
+  {"fieldname": "ac_last_maintenance_date", "label": "Last Maintenance Date", "fieldtype": "Date"},
+  {"fieldname": "ac_next_maintenance_due_date", "label": "Next Maintenance Due Date", "fieldtype": "Date"},
+  {"fieldname": "ac_maintenance_schedule", "label": "Maintenance Schedule", "fieldtype": "Link", "options": "Maintenance Schedule"},
+  {"fieldname": "ac_maintenance_tasks", "label": "Maintenance Work", "fieldtype": "Table", "options": "Maintenance Task"},
+  {"fieldname": "ac_release", "label": "Release Certificate", "fieldtype": "Attach"},
+  {"fieldname": "ac_logbooks", "label": "Logbooks", "fieldtype": "Table", "options": "Logbooks"}
+  
+],
+ "permissions": [{"role": "System Manager", "read": 1, "write": 1}]
+}

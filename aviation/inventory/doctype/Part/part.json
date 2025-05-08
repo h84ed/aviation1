@@ -1,0 +1,37 @@
+{
+    "doctype": "DocType",
+    "name": "Part",
+    "module": "Inventory",
+    "custom": 1,
+    "fields": [
+    {"fieldname": "part_number", "label": "Part Number", "fieldtype": "Data", "reqd": 1},
+    {"fieldname": "part_name", "label": "Part Name", "fieldtype": "Data", "fetch_from": "item_code.item_name"},
+    {"fieldname": "item_code", "label": "Item Code", "fieldtype": "Link", "Options": "Item", "fetch_from": "item.item_code"},
+    {"fieldname": "shelf_location", "label": "Shelf Location", "fieldtype": "Link", "Options": "Shelf Location"},
+    {"fieldname": "shelf_location_info", "label": "Shelf Location Info", "fieldtype": "Data"},
+    {"fieldname": "part_serial_no", "label": "Serial No", "fieldtype": "Data"},
+    {"fieldname": "part_batch_no", "label": "Batch No", "fieldtype": "Data"},
+    {"fieldname": "old_grn_number", "label": "Manual GRN Number", "fieldtype": "Data"},
+    {"fieldname": "grn_number_pr", "label": "GRN Number by Purchase Receipt", "fieldtype": "Link", "Options": "Purchase Receopt"},
+    {"fieldname": "alt_part_number", "label": "Alt Part Number", "fieldtype": "Data"},
+    {"fieldname": "part_type", "label": "Part Type", "fieldtype": "Select", "options": "\n\nAirframe\nEngine\nAvionics\nPropeller\nAccessory\nComponent\nOther"},
+    {"fieldname": "condition_code", "label": "Condition Code", "fieldtype": "Select", "options": "\nNE (New)\nOH (Overhauled)\nSV (Serviceable)\nAR (As Removed)\nRP (Repairable)\nSCR (Scrap)"},
+    {"fieldname": "engine_type", "label": "Engine Type",  "fieldtype": "Select", "options": "\n\nPT6 Series\nPW100 Series\nOther Turbine Enfines"},
+    {"fieldname": "release_cert", "label": "Release Certificate", "fieldtype": "Attach"},
+    {"fieldname": "release_type", "label": "Release Type", "fieldtype": "Select", "options": "FAA 8130\nEASA Form One\nCAAT Form One\nCAAN\nDGCA\nOther"},
+    {"fieldname": "part_logbooks", "label": "Attach other documents and Ligbooks", "fieldtype": "Table", "Options": "Logbooks"},
+    {"fieldname": "is_tracked_component", "label": "Is Tracked Component", "fieldtype": "Check"},
+    {"fieldname": "is_core_tracked", "label": "Has Exchange Core", "fieldtype": "Check"},
+    {"fieldname": "exchange_core_value", "label": "Exchange Core Value", "fieldtype": "Currency"},
+    {"fieldname": "supplier", "label": "Supplier", "fieldtype": "Link", "options": "Supplier"},
+    {"fieldname": "manufacturer", "label": "Manufacturer", "fieldtype": "Data"},
+    {"fieldname": "purchase_order", "label": "Purchase Order", "fieldtype": "Link", "options": "Purchase Order"},
+    {"fieldname": "purchase_invoice", "label": "Purchase Invoice", "fieldtype": "Link", "options": "Purchase Invoice"},
+    {"fieldname": "linked_aircraft", "label": "Linked Aircraft", "fieldtype": "Link", "options": "Aircraft"},
+    {"fieldname": "linked_engine", "label": "Linked Engine", "fieldtype": "Link", "options": "Engine"},
+    {"fieldname": "linked_work_order", "label": "Linked Work Order", "fieldtype": "Link", "options": "Work Order"},
+    {"fieldname": "status", "label": "Status", "fieldtype": "Select", "options": "\nIn Service\nIn Maintenance\nIn Storage\nScrap"}
+   ],
+    "permissions": [{"role": "System Manager", "read": 1, "write": 1}]
+   }
+   
